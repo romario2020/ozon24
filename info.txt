@@ -1,0 +1,8 @@
+SELECT * FROM stock_fbo_ozon 
+WHERE "current_date" = '2024-02-28' ORDER BY ctid LIMIT 1000
+
+
+UPDATE public.stock_fbo_ozon
+SET itog = NULL
+
+
