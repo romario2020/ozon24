@@ -67,7 +67,7 @@ def sale_ozon_fbo():
     # Создание подключения к базе данных
     
     
-    conn = psycopg2.connect("dbname=sale_mp user=postgres password=789 host=localhost port=5432")
+    conn = psycopg2.connect("dbname=sale_mp user=postgres password=postgres host=localhost port=5432")
     cur = conn.cursor()
 
 # # Создание таблицы

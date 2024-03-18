@@ -76,19 +76,19 @@ def items_discrip():
     del df_items["images"], df_items["images360"], df_items["pdf_list"], df_items["complex_attributes"]
 
 
-    # # подключенияк БД PostgreSQL
-    # db_username = 'postgres'
-    # db_password = '789'
-    # db_host = 'localhost'
-    # db_port = '5432'
-    # db_name = 'sale_mp'
-    # table_name = 'items_description'
+    # подключенияк БД PostgreSQL
+    db_username = 'postgres'
+    db_password = 'postgres'
+    db_host = 'localhost'
+    db_port = '5432'
+    db_name = 'sale_mp'
+    table_name = 'items_description'
 
     
-    # engine = create_engine(f'postgresql://{db_username}:{db_password}@{db_host}:{db_port}/{db_name}')
+    engine = create_engine(f'postgresql://{db_username}:{db_password}@{db_host}:{db_port}/{db_name}')
 
-    # #записываем таблицу в БД
-    # df_items.to_sql(table_name, engine, if_exists='replace', index=False, dtype={'attributes': sqlalchemy.types.JSON,'complex_attributes': sqlalchemy.types.JSON})
+    #записываем таблицу в БД
+    df_items.to_sql(table_name, engine, if_exists='replace', index=False, dtype={'attributes': sqlalchemy.types.JSON,'complex_attributes': sqlalchemy.types.JSON})
 
   
 

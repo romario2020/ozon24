@@ -74,7 +74,7 @@ def items_status():
     
     # подключенияк БД PostgreSQL
     db_username = 'postgres'
-    db_password = '789'
+    db_password = 'postgres'
     db_host = 'localhost'
     db_port = '5432'
     db_name = 'sale_mp'
