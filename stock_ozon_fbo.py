@@ -42,7 +42,7 @@ def stock_ozon_fbo():
 
     # Уданные подключенияк БД PostgreSQL
     db_username = 'postgres'
-    db_password = 'postgres'
+    db_password = 'kjaWWmk!H12iznkwqzfhwugi'
     db_host = 'localhost'
     db_port = '5432'
     db_name = 'sale_mp'
