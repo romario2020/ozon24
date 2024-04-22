@@ -21,7 +21,7 @@ from sqlalchemy import create_engine
 def sale_ozon_fbo():
 
     today = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z" 
-    data_since = datetime.now() - timedelta(days=35)
+    data_since = datetime.now() - timedelta(days=20)
     data_since_format = data_since.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z" 
 
     url = "https://api-seller.ozon.ru/v2/posting/fbo/list"
