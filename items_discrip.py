@@ -56,7 +56,7 @@ def items_discrip():
     cols = df_items.columns.tolist()
     cols.insert(0, cols.pop(cols.index("offer_id")))
     df_items = df_items.reindex(columns=cols)
-
+    df_items["barcodes"] = df_items["barcodes"].apply(lambda s: str(s[0]) if s else "")
     # удаляем лишние столбцы
     del df_items["images"], df_items["pdf_list"], df_items["complex_attributes"]
 
@@ -71,6 +71,8 @@ def items_discrip():
     engine = create_engine(
         f"postgresql://{db_username}:{db_password}@{db_host}:{db_port}/{db_name}"
     )
+    print(df_items.columns)
+    print(df_items.head())
 
     # записываем таблицу в БД
     df_items.to_sql(
@@ -87,4 +89,4 @@ def items_discrip():
     return df_items, print("описание заебись")
 
 
-# items_discrip()
+items_discrip()
