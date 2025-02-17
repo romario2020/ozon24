@@ -58,7 +58,7 @@ def items_discrip():
     df_items = df_items.reindex(columns=cols)
     df_items["barcodes"] = df_items["barcodes"].apply(lambda s: str(s[0]) if s else "")
     # удаляем лишние столбцы
-    del df_items["images"], df_items["pdf_list"], df_items["complex_attributes"]
+    del df_items["images"], df_items["model_info"], df_items["pdf_list"], df_items["complex_attributes"]
 
     # подключенияк БД PostgreSQL
     db_username = "postgres"
@@ -89,4 +89,4 @@ def items_discrip():
     return df_items, print("описание заебись")
 
 
-items_discrip()
+# items_discrip()
