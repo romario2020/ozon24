@@ -56,6 +56,8 @@ def items_status():
     cols = df_items.columns.tolist()
     cols.insert(0, cols.pop(cols.index("offer_id")))
     df_items = df_items.reindex(columns=cols)
+    # удаляем лишние столбцы
+    del (df_items["quants"],)
 
     # подключенияк БД PostgreSQL
     db_username = "postgres"
@@ -72,7 +74,13 @@ def items_status():
     # записываем таблицу в БД
     df_items.to_sql(table_name, engine, if_exists="replace", index=False)
 
+    # df_items.to_excel(
+    #     "Project_my\\ozon_fbo\\excell\\status_ozon2422.xlsx",
+    #     sheet_name="active",
+    #     index=False,
+    # )
+
     return print("остатки заебись", df_items.tail(10))
 
 
-# items_status()
+items_status()
